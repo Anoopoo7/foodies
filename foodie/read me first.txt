@@ -1,0 +1,12 @@
+My configuration for my db
+
+'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "hotel",
+        'USER': "root",
+        'PASSWORD': "password123",
+        'HOST': "localhost",
+        'PORT': "3306",
+    }
+
+ you should change it for your db befor run :)

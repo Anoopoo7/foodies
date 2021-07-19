@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- {% load static %} -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='{% static "csss/product.css" %}'>
+    <!-- <link rel="stylesheet" href="../../../static/csss/product.css"> -->
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src='{% static "jss/product.js" %}'></script>
+    <!-- <script src="../../../static/jss/product.js"></script> -->
+    <title>Product</title>
+</head>
+
+<body>
+    <!-- navbar starts -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand mr-5" href="#">
+                    <img src="https://img.icons8.com/ios/40/ffffff/tableware.png" />
+                </a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="plp">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br><br>
+    <!-- navbar ends -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="image card-hover">
+                    <img class="w-100 h-100 img-fluid" src={{item.img}} alt="image">
+                    <!-- <img class="w-100 h-100 img-fluid" src="../../../static/imgs/img1.jpg" alt="image"> -->
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="container">
+                    <div class="col-12">
+                        <h4>{{item.name}}</h4>
+                        <br>
+                        <p>{{item.dis}}</p>
+                        <h2>{{item.price}} <span class="text-muted" style="text-decoration: line-through; font-size:medium;"> 300
+                            </span> <img src="https://img.icons8.com/ios-filled/50/fa314a/tag-window.png" /> 10% OFF
+                        </h2>
+                        <br>
+                        <button class="btn btn-danger pl-5 pr-5 address">Order Now</button>
+                        <br><br>
+                        <p class="text-muted" style="font-size:small;">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nobis maxime laborum quos
+                            consequuntur hic iusto aliquam, quasi veniam velit mollitia suscipit, deserunt nostrum amet
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <!-- hidden section starts -->
+
+    <div class="hidden d-flex align-items-center justify-content-center">
+        <div class="final">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11 m-4 d-flex justify-content-between">
+                        <img src="https://img.icons8.com/ios/50/ffffff/tableware.png" />
+                        <img class="h-100 close" src="https://img.icons8.com/windows/50/ffffff/macos-close.png" />
+                    </div>
+                </div>
+                <br>
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <h4 class="text-light text-center">Address</h4>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="exampleInputEmail1" required
+                                    aria-describedby="emailHelp" placeholder="Enter name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="exampleInputPassword1" required
+                                    placeholder="Enter phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <textarea required id="exampleInputPassword1" class="form-control" cols="30" rows="5"
+                                    placeholder="Enter address" name="address"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-light btn-block text-danger">Place order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- hidden section ends -->
+    <!-- footer section starts -->
+
+    <div class="card text-center bg-danger pt-5">
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <div class="row mt-2 p-5">
+                <div class="col-2"></div>
+                <div class="col-2">
+                    <a href="home">
+                        <h5 class="text-secondary">
+                            Home
+                        </h5>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="plp">
+                        <h5 class="text-secondary">
+                            Menu
+                        </h5>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="contact">
+                        <h5 class="text-secondary">
+                            Contact
+                        </h5>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="/">
+                        <h5 class="text-secondary">
+                            Logout
+                        </h5>
+                    </a>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <img class="button-shodow" src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" />
+            <img class="button-shodow" src="https://img.icons8.com/ios-glyphs/30/ffffff/instagram-new.png" />
+            <img class="button-shodow" src="https://img.icons8.com/material-rounded/30/ffffff/whatsapp.png" />
+            <img class="button-shodow" src="https://img.icons8.com/material-rounded/30/ffffff/twitter.png" />
+        </div>
+    </div>
+    <!-- foooter section ends -->
+</body>
+
+</html>

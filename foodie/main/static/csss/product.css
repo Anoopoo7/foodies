@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+.card-hover:hover,.button-shodow:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+body{
+    position: relative;
+}
+.image{
+    width: 100%;
+    background-color: blue;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.hidden{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.final{
+    margin-top: 50px;
+    width: 40%;
+    height: 80vh;
+    border-radius: 15px;
+    background-color: rgba(194, 9, 9, 0.879);
+    display: none;
+}
